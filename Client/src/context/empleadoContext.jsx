@@ -2,6 +2,7 @@ import { createContext, useContext, useState } from 'react';
 
 import { obtenerEmpleadoss, crearEmpleado, actualizarEmpleado, deleteEmpleado } from '../api/empleados';
 
+
 const EmpleadoContext = createContext();
 
 export const useEmpleados = () => {
@@ -24,11 +25,22 @@ export function EmpleadoProvider({ children }) {
             console.log(error);
         }
     }
+   
+    const agregarEmpleado = async (nuevoEmpleado) => {
+        try {
+            const res = await crearEmpleado(nuevoEmpleado); // Debes pasar nuevoEmpleado aquí
+            setEmpleados([...empleados, res.data]);
+            console.log(res);
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
     return (
         <EmpleadoContext.Provider value={{
             empleados, 
-            obtenerEmpleados, 
+            obtenerEmpleados,
+            agregarEmpleado 
         }}>
             {children}
         </EmpleadoContext.Provider>

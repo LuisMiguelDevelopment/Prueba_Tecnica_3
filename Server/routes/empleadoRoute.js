@@ -8,7 +8,7 @@ const router = Router();
 
 router.get('/empleados',obtenerEmpleados);
 router.get('/empleados/:id',obtenerEmpleados);
-router.post('/empleados',validateSchema(crearEmpleado) ,agregarEmpleado);
+router.post('/empleados' ,agregarEmpleado);
 router.put('/empleados/:id',actualizarEmpleado);
 router.delete('/empleados/:id',eliminarEmpleado);
 

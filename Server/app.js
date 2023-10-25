@@ -10,6 +10,11 @@ app.use(express.json());
 app.use('/api',empleadosRoute)
 app.use('/api',rolesRoute)
 
+app.use(cors({
+    origin:'http://localhost:5173/',
+    credentials:true
+}))
+
 
 
 export default app;

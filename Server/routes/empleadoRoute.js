@@ -5,6 +5,7 @@ import  { agregarEmpleado , obtenerEmpleados , eliminarEmpleado ,actualizarEmple
 const router = Router();
 
 router.get('/empleados',obtenerEmpleados);
+router.get('/empleados/:id',obtenerEmpleados);
 router.post('/empleados',agregarEmpleado);
 router.put('/empleados/:id',actualizarEmpleado);
 router.delete('/empleados/:id',eliminarEmpleado);

@@ -1,5 +1,6 @@
-import { BrowserRouter, Router, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { EmpleadoProvider } from './context/empleadoContext'
+import  Empleados  from './pages/Empleados';
 import './App.css'
 
 function App() {
@@ -7,13 +8,13 @@ function App() {
 
   return (
     <>
-      <BrowserRouter>
-        <EmpleadoProvider>
-          <Router>
-            <Route />
-          </Router>
-        </EmpleadoProvider>
-      </BrowserRouter>
+      <EmpleadoProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route path='/' element={<Empleados/>} />
+          </Routes>
+        </BrowserRouter>
+      </EmpleadoProvider>
     </>
   )
 }

@@ -1,20 +1,36 @@
-import {createContext , useContext , useState} from 'react';
+import { createContext, useContext, useState } from 'react';
 
-import {obtenerEmpleados , crearEmpleado , actualizarEmpleado , deleteEmpleado} from '../api/empleados';
-
+import { obtenerEmpleadoss, crearEmpleado, actualizarEmpleado, deleteEmpleado } from '../api/empleados';
 
 const EmpleadoContext = createContext();
 
-export const useEmpleados = () =>{
+export const useEmpleados = () => {
     const context = useContext(EmpleadoContext);
-    if(!context){
+    if (!context) {
         throw new Error('useEmpleados must be used within a ProductoProvider');
     }
     return context;
 };
 
+export function EmpleadoProvider({ children }) {
+    const [empleados, setEmpleados] = useState([]);
 
-export function EmpleadoProvider({children}){
-    
+    const obtenerEmpleados = async () => {
+        try {
+            const res = await obtenerEmpleadoss();
+            setEmpleados(res.data);
+            console.log(res);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    return (
+        <EmpleadoContext.Provider value={{
+            empleados, 
+            obtenerEmpleados, 
+        }}>
+            {children}
+        </EmpleadoContext.Provider>
+    );
 }
-

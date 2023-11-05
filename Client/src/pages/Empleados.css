@@ -1,0 +1,75 @@
+.general{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.info{
+    background-color: rgb(105, 105, 235);
+    width: 34.7%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 0 0 0 10px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    width: 30%;
+    padding: 50px;
+}
+
+.form__items{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    
+}
+
+.form__input{
+    width: 70%;
+    margin-left: 10px;
+}
+
+.sexo__general{
+    display: flex;
+    margin-top: 10px;
+}
+
+.form__sexo{
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+.sexo{
+    width: 100px;
+    display: flex;
+}
+
+.select{
+    margin-top: 20px;
+}
+
+.textarea{
+    margin-top: 20px;
+}
+
+
+.boletin{
+    margin-bottom: 15px;
+}
+
+
+.button{
+    background-color: rgb(110, 110, 221);
+    width: 100px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: white;
+    margin-top: 10px;
+}

@@ -4,9 +4,26 @@
     flex-direction: column;
 }
 
+
+.general__form{
+    display: flex;
+    flex-direction: column;
+
+    width: 40%;
+    padding: 50px;
+}
+
+.form{
+    display: flex;
+    flex-direction: column;
+    background-color: aliceblue;
+    width: auto;
+    padding: 50px;
+}
+
 .info{
     background-color: rgb(105, 105, 235);
-    width: 34.7%;
+    width: auto;
     height: 50px;
     display: flex;
     align-items: center;
@@ -14,13 +31,6 @@
     padding: 0 0 0 10px;
 }
 
-.form{
-    display: flex;
-    flex-direction: column;
-    background-color: aliceblue;
-    width: 30%;
-    padding: 50px;
-}
 
 .form__items{
     display: flex;
@@ -73,3 +83,23 @@
     color: white;
     margin-top: 10px;
 }
+
+.fila-par {
+    background-color: #f2f2f2;
+  }
+  
+
+  .fila-impar {
+    background-color: #fff; 
+  }
+
+  td{
+    padding: 10px;
+  }
+  th{
+    font-weight: 900;
+  }
+
+  label{
+    font-weight: 500;
+  }

@@ -7,7 +7,7 @@ import {AiFillEdit , AiFillDelete} from 'react-icons/ai';
 import './Empleados.css';
 
 const Empleados = () => {
-  const { empleados, obtenerEmpleados, agregarEmpleado } = useEmpleados();
+  const { empleados, obtenerEmpleados, agregarEmpleado , actualizarEmpleados , deleteEmpleados } = useEmpleados();
   const { roles, obtenerRoles } = useRoles();
   const { areas, obtenerAreas } = useAreas();
   const { register, handleSubmit } = useForm();
@@ -23,6 +23,10 @@ const Empleados = () => {
   const handleQuiereBoletinChange = (event) => {
     setQuiereBoletin(event.target.checked);
   };
+
+  const handleDeleteEmpleado = (empleadoId)=>{
+    deleteEmpleados(empleadoId)
+  }
 
   const onSubmit = handleSubmit((data) => {
     const empleadoData = {
@@ -98,11 +102,6 @@ const Empleados = () => {
         </form>
       </div>
 
-      {/* {empleados.map((empleado) => (
-        <table className="" key={empleado.id}>
-          <h1>{empleado.nombre}</h1>
-        </table>
-      ))} */}
 
       <table>
         <tr>
@@ -120,7 +119,7 @@ const Empleados = () => {
             <td>{empleado.area}</td>
             <td>{empleado.boletin}</td>
             <td><AiFillEdit/></td>
-            <td><AiFillDelete/></td>
+            <td  ><AiFillDelete onClick={()=>handleDeleteEmpleado(empleado.id)}/></td>
           </tr>
             ))}
       </table>
